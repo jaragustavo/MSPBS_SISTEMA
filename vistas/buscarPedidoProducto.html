@@ -1,0 +1,68 @@
+<div id="panelBuscar" class="panel panel-primary">
+        <div class="panel-heading centrado">Buscar Pedidos </div>
+        <div class="panel-body">
+              <div class="panel-body table-responsive" id="listadoregistros">
+                <table id="tblPedidoProducto" class="table table-striped table-bordered table-condensed table-hover">
+                <thead>          
+                         <tr>
+                           <th  >Codigo</th>
+                           <th >Fecha Pedido</th>
+                           <th >Establecimiento</th>
+                           <th>Simese</th>
+                           <th>Nro.Nota</th>
+                            <th>Estado</th>
+                            <th>Obs</th>
+                       </tr>
+                   </thead>
+                   <tbody id="contenidoBusqueda">
+                   </tbody>
+                    <tfoot>
+                       <th  >Codigo</th>
+                           <th >Fecha Pedido</th>
+                           <th >Establecimiento</th>
+                           <th>Simese</th>
+                           <th>Nro.Nota</th>
+                            <th>Estado</th>
+                            <th>Obs</th>
+                    </tfoot>
+              </table>
+          
+           </div>
+           <div class="panel-footer centrado">
+               <button id="botonSalirBuscar" type="button"
+                       class="btn btn-primary btn-sm">
+                   Salir
+               </button>
+           </div>
+</div>
+</div>
+<script>
+  
+   listarPedidoProducto();
+     
+  
+    $("#botonSalirBuscar").on("click",function(){
+      
+        $("#buscar").fadeOut("slow");
+        $("#formularioregistros").fadeIn("slow");
+     });
+     $('#tblPedidoProducto tbody').on( 'click', 'tr', function () {
+         var codigo_pedido_producto=$(this).find("td:first").html();
+         
+      //  var medicamento=$(this).find("td:nth-child(2)").html()+' '+$(this).find("td:nth-child(3)").html()+' '+$(this).find("td:nth-child(4)").html()+' '+$(this).find("td:nth-child(5)").html();
+       //   alert (medicamento);
+      // $("#desProducto").val(medicamento);
+       $("#codigo_pedido_producto").val(codigo_pedido_producto);
+       $("#buscar").fadeOut("slow");
+       $("#formularioregistros").fadeIn("slow");
+          
+     });
+     
+     
+    
+   
+ 
+     
+</script>    
+        
+                   

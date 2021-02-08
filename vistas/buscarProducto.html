@@ -1,0 +1,67 @@
+<div id="panelBuscar" class="panel panel-primary">
+        <div class="panel-heading centrado">Buscar Medicamento </div>
+        <div class="panel-body">
+              <div class="panel-body table-responsive" id="listadoregistros">
+                <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover">
+                <thead>          
+                         <tr>
+                           <th  >Codigo</th>
+                           <th >Codigo Catalogo</th>
+                           <th >Producto</th>
+                           <th>Especificacion Técnica</th>
+                             <th>Presentacion</th>
+                           
+                       </tr>
+                   </thead>
+                   <tbody id="contenidoBusqueda">
+                   </tbody>
+                    <tfoot>
+                                                    <th  >Codigo</th>
+  <th  >Codigo</th>
+                           <th >Codigo Catalogo</th>
+                           <th >Producto</th>
+                           <th>Especificacion Técnica</th>
+                            <th>Presentacion</th>
+                           
+                    </tfoot>
+              </table>
+          
+           </div>
+           <div class="panel-footer centrado">
+               <button id="botonSalirBuscar" type="button"
+                       class="btn btn-primary btn-sm">
+                   Salir
+               </button>
+           </div>
+</div>
+</div>
+<script>
+  
+   listarReactivo();
+     
+  
+    $("#botonSalirBuscar").on("click",function(){
+      
+        $("#buscar").fadeOut("slow");
+        $("#formularioregistros").fadeIn("slow");
+     });
+     $('#tbllistado tbody').on( 'click', 'tr', function () {
+         var codigo_medicamento=$(this).find("td:first").html();
+         
+        var medicamento=$(this).find("td:nth-child(2)").html()+' '+$(this).find("td:nth-child(3)").html()+' '+$(this).find("td:nth-child(4)").html()+' '+$(this).find("td:nth-child(5)").html();
+       //   alert (medicamento);
+       $("#desProducto").val(medicamento);
+        $("#codigo_medicamento").val(codigo_medicamento);
+        $("#buscar").fadeOut("slow");
+        $("#formularioregistros").fadeIn("slow");
+          
+     });
+     
+     
+    
+   
+ 
+     
+</script>    
+        
+                   

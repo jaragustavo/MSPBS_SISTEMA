@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SICIAP-OC</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../public/css/font-awesome.css">
+   
+    <!-- este comente su url en el archvivo css -->
+    <link rel="stylesheet" href="../public/css/AdminLTE.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="../public/css/blue.css">
+
+
+  </head>
+<style>
+@font-face{
+font-family:Fuentechida;
+src:url(fonts/OleoScript-Regular.ttf);
+}
+    body{
+        background-image: url(../public/img/Fondo_Nanduti.png);
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment:fixed;
+    }
+    .formulario{
+        transition: 2s;
+        margin-top: 100px;
+        width: 30%;
+        box-shadow: 0px 0px 40px rgba(51,102,153,1),0px 0px 80px rgba(256,256,256,1 );
+    }
+
+    .formulario:hover{
+        transition: .8s;
+        background-color: rgba(192,192,192,.5);
+    }
+
+
+.logo{
+        height: 75px;
+        margin-top: 40px;
+    }
+    
+ .espaciado{
+        margin-top: 10px;
+    }
+
+    fieldset{
+        transition: 2s;
+        margin-bottom: 50px;
+        border-color: rgba(51,102,153,0.5);
+        border-style: groove;
+        border-width: 5px;
+        border-radius: 20px;
+       
+    }
+    
+
+
+   h4{
+        
+        color:#3750A4;
+        text-align: center;
+        font-family: fuentechida;
+        font-weight:bold;
+    }
+    h3{
+        color:#3750A4;
+        text-align: center;
+        font-family: fuentechida;
+        font-weight:bold;
+    }
+
+  .Input{
+        transition: .8s;
+        background-color: rgba(0,0,0,.5);
+        color: white;
+        border-color:#006;
+    border-bottom-color:white;
+        border-bottom-style:groove;
+    border-left:none;
+    border-right:none;
+    border-top:none;
+        border-width: 4px;
+        border-bottom-color:red; 
+    }
+    
+ .Input:hover{
+        transition: .8s;
+    background-color:rgba(55,71,79 ,.5);
+    box-shadow:inset;
+       
+    }
+    
+    .Input:focus{
+        transition: .8s;
+    border-bottom-color:red;
+    }
+   
+
+    p
+    {
+        color: #3750A4;
+        text-align: center;
+        font-weight:bold;
+    }
+
+
+    @media screen and (max-width:750px) {
+        
+        .logo{
+            height: 50px;
+
+        }
+        .formulario{
+            transition: 2s;
+            width: 95%;
+            margin-top: 10px;
+        }
+    }
+</style>
+
+
+<body>
+    <div class="container formulario">
+         <div class="row">
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <img src="../public/img/logomspbs.png" class="logo center-block">                
+                </div>
+
+            
+        </div>
+        <div class=" espaciado">
+            <p>SISTEMA DE INFORMACION Y CONTROL DE INVENTARIO AUTOMATIZADO DEL PARAGUAY</p><br>
+            <p>SICIAP-OC</p>
+        </div>
+        
+        <div class="row">
+            <fieldset class="col-xs-10 col-xs-offset-1">
+            
+
+                <legend class="hidden-xs">
+                    <h3>D.G.G.I.E.S.</h3>
+                </legend>
+                
+                <form method="post" id="frmAcceso" class="form-horizontal">
+                    
+                    <div class="form-group">
+                    <label class="col-xs-12" for="usuario"><h4>Usuario</h4></label>
+                    <div class="col-xs-10 col-xs-offset-1">                        
+                        <input type="text" id="logina" name="logina"class="form-control" placeholder="Usuario">
+                       
+                    </div>
+                    
+                    </div>
+                    <div class="form-group">
+                    <label class="col-xs-12" for="password"><h4>Contraseña</h4></label>
+                        <div class="col-xs-10 col-xs-offset-1">
+                        <input type="password" id="clavea" name="clavea" class="form-control" placeholder="Contraseña">
+                        
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary center-block">Aceptar</button>
+                    
+                    </div>
+                 
+                </form>
+            </fieldset>
+        
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="../public/js/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="../public/js/bootstrap.min.js"></script>
+     <!-- Bootbox -->
+    <script src="../public/js/bootbox.min.js"></script>    
+    <script type="text/javascript" src="scripts/login.js"></script>
+</body>
+</html>

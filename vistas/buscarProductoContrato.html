@@ -1,0 +1,84 @@
+<div id="panelBuscar" class="panel panel-primary">
+        <div class="panel-heading centrado">Buscar Medicamento </div>
+        <div class="panel-body">
+              <div class="panel-body table-responsive" id="listadoregistros">
+                <table id="tbllistadoProducto" class="table table-striped table-bordered table-condensed table-hover">
+                <thead>          
+                         <tr>
+                           <th>Lote</th>
+                           <th>Item</th>
+                           <th>Codigo</th>
+                           <th>Producto</th>
+                           <th>Precio Unitario</th>
+                           <th>Cantidad Maxima</th>
+                           <th>Cantidad Emitida</th>
+                       </tr>
+                   </thead>
+                   <tbody id="contenidoBusqueda">
+                   </tbody>
+                    <tfoot>
+                        <tr>
+                           <th>Lote</th>
+                           <th>Item</th>
+                           <th>Codigo</th>
+                           <th>Producto</th>
+                           <th>Precio Unitario</th>
+                           <th>Cantidad Maxima</th>
+                           <th>Cantidad Emitida</th>
+                       </tr>
+                           
+                    </tfoot>
+              </table>
+          
+           </div>
+           <div class="panel-footer centrado">
+               <button id="botonSalirBuscar" type="button"
+                       class="btn btn-primary btn-sm">
+                   Salir
+               </button>
+           </div>
+</div>
+</div>
+<script>
+  
+    listarProductoContrato();
+     
+  
+    $("#botonSalirBuscar").on("click",function(){
+        $("#buscar").fadeOut("slow");
+        $("#formularioregistros").fadeIn("slow");
+     });
+     $('#tbllistadoProducto tbody').on( 'click', 'tr', function () {
+        var codigo_medicamento=$(this).find("td:nth-child(3)").html();
+         
+        var medicamento=$(this).find("td:nth-child(4)").html();
+     
+       var lote=$(this).find("td:nth-child(1)").html(); 
+       var item=$(this).find("td:nth-child(2)").html(); 
+       var precio_unitario = $(this).find("td:nth-child(5)").html()
+       var cantidad_adjudicada = $(this).find("td:nth-child(6)").html() 
+       var cantidad_emitida = $(this).find("td:nth-child(7)").html() 
+        //   alert (medicamento);
+        $("#desProducto").val(medicamento);
+        $("#codigo_medicamento").val(codigo_medicamento);
+        $("#lote").val(lote);
+        $("#item").val(item);
+        $("#precio").val(precio_unitario);
+        formatNumero(document.getElementById("precio"));
+        $("#cantidad_adjudicada").val(cantidad_adjudicada);
+        formatNumero(document.getElementById("cantidad_adjudicada"));
+        $("#cantidad_emitida").val(cantidad_emitida);
+        formatNumero(document.getElementById("cantidad_emitida"));
+        $("#buscar").fadeOut("slow");
+        $("#formularioregistros").fadeIn("slow");
+          
+     });
+     
+     
+    
+   
+ 
+     
+</script>    
+        
+                   

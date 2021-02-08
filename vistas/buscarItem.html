@@ -1,0 +1,80 @@
+
+<div id="panelBuscar" class="panel panel-primary formulario-buscar">
+         <div class="panel-body">
+               
+              <div class="panel-body table-responsive" id="listadoArticulo">
+                <table id="tblItem" class="table table-striped table-bordered table-condensed table-hover">
+                <thead>          
+                         <tr>
+                           <th >Código</th>
+                           <th >Nro.Item</th>
+                           <th >Codigo Catalogo</th>
+                           <th >Nombre</th>
+                           <th >Especificación</th>
+                           <th >Presentación</th>
+                           <th >Presentación Entrega</th>
+                           <th >Necesidad</th>
+                          
+                         </tr>
+                   </thead>
+                   <tbody id="contenidoBusqueda">
+                   </tbody>
+                    <tfoot>
+                           <th >Código</th>
+                           <th >Nro.Item</th>
+                           <th >Codigo Catalogo</th>
+                           <th >Nombre</th>
+                           <th >Especificación</th>
+                           <th >Presentación</th>
+                           <th >Presentación Entrega</th>
+                           <th >Necesidad</th>
+                           
+                    </tfoot>
+              </table>
+          
+           </div>
+           <div class="panel-footer centrado">
+               <button id="botonSalirBuscar" type="button"
+                       class="btn btn-primary btn-sm">
+                   Salir
+               </button>
+           </div>
+</div>
+</div>
+<script>
+  
+listarItem();
+     $("#botonSalirBuscar").on("click",function(){
+        $("#buscarItem").fadeOut("slow");
+        $("#formularioregistros").fadeIn("slow");
+     });
+     $('#tblItem tbody').on( 'click', 'tr', function () {
+         
+        var codigo_item=$(this).find("td:first").html();
+        
+        listarCondicionItem(codigo_item); 
+        
+        var nombre_item=$(this).find("td:nth-child(4)").html();
+       //   alert (medicamento);
+        $("#codigo_item").val(codigo_item);
+        $("#nombre_item").val(nombre_item);
+        $("#buscarItem").fadeOut("slow");
+        $("#formularioregistros").fadeIn("slow");
+              
+     });
+     $('table tr').mouseover(function() {
+        $(this).addClass('row_selected');
+    });
+    $('table tr').mouseout(function() {
+        $(this).removeClass('row_selected');
+    });
+ function listarCondicionItem(codigo){
+     //alert(codigo);
+      $.post("../ajax/ofertaCovid.php?op=listarCondicion&codigo_item_covid="+codigo,function(r){
+           $("#condiciones").html(r);
+     });
+ }     
+</script>  
+  
+        
+                   
